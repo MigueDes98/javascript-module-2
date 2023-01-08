@@ -16,8 +16,19 @@ let coffeeMachine = {
       flatWhite: 3.0,
     },
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
+    insertMoney: function (amount) {return this.insertedAmount = amount},
+    getCoffee: function (coffeeType ) {
+
+      this.insertedAmount = coffee;
+      if (coffee >= this.prices.blackCoffee && coffee < this.prices.cappuccino){
+      return 'Please take your blackCofee';}
+      if (coffee >= this.prices.cappuccino && coffee < this.prices.flatWhite){
+        return  'Please take your cappuccino'
+      }
+      if (coffee >= this.prices.flatWhite ) {
+        return  'Please take your flatWhite'
+      }
+    },
   };
   
   /*

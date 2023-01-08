@@ -10,4 +10,7 @@ let laptop = {
     brand: "Lenovo",
     screenSize: 13,
     isTouchscreen: true,
+    color: "black",
+    portUSB: 2,
   };
+  console.log(laptop);

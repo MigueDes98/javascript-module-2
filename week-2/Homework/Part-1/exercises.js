@@ -15,6 +15,16 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+  arrayOfPeople.forEach(element => {
+
+    let h1 = document.createElement("h1");
+    h1.innerText = element.name;
+    content.appendChild(h1);
+
+    let h2 = document.createElement("h2");
+    h2.innerText = element.job;
+    content.appendChild(h2);
+  });
 }
 
 /**
@@ -25,6 +35,14 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 function exerciseTwo(shopping) {
+  let content = document.querySelector("#content");
+  let ul = document.createElement("ul");
+  content.appendChild(ul);
+  shopping.forEach(items => {
+    let li = document.createElement("li");
+    li.innerText = items;
+    ul.appendChild(li);
+    })
   //Write your code in here
 }
 
@@ -58,6 +76,33 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
+  let content = document.querySelector("#content");
+  let lista = document.createElement("ul");
+  content.appendChild(lista);
+
+  books.forEach((book)=> {
+    
+    let listItem = document.createElement("li");
+    lista.appendChild(listItem);
+
+
+    let p = document.createElement("p");
+    p.textContent = book.title + " - " + book.author;
+    listItem.appendChild(p);
+
+
+    let image = document.createElement("img");
+    image.src = "./Image/" + book.title + ".png";
+    listItem.appendChild(image);
+
+  
+    if(book.alreadyRead === true){
+      listItem.style.backgroundColor = "green";
+    }
+    else if(book.alreadyRead === false){
+      listItem.style.backgroundColor = "red";
+    }
+  });
   //Write your code in here
 }
 
@@ -102,3 +147,6 @@ const books = [
 ];
 
 exerciseThree(books);
+
+console.log(window.localStorage);
+window.localStorage.setItem("Miguel", "Desimone");

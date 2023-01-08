@@ -48,7 +48,7 @@ let restaurant1 = {
   };
   
   let restaurants = [restaurant1, restaurant2, restaurant3];
-  
+   
   /*
   DO NOT EDIT ANYTHING ABOVE THIS LINE
   WRITE YOUR CODE BELOW
@@ -59,6 +59,10 @@ let restaurant1 = {
     applicationVersion: "1.0",
     restaurants: restaurants,
     findAvailableRestaurants: function (numberOfPeople) {
+      if (numberOfPeople >= restaurants.totalSeats){
+        return restaurants.get.name
+      }
+      
       // Complete here
     },
     findRestaurantServingDish: function (dishName) {
